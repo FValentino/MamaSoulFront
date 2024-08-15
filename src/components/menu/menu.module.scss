@@ -1,0 +1,104 @@
+/* Resetear márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor para alinear elementos */
+.menuContainer{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo de la marca (logo) */
+.navbarLogoContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.image{
+    width: 40%;
+}
+
+/* Estilo del botón "hamburguesa" */
+.navbarToggler {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Se mostrará en pantallas pequeñas */
+}
+
+/* Estilo del colapso del navbar */
+.navbarCollapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBarOptionsContainer{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo de la lista de navegación */
+.navbarContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarContainerUser{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.navbarNav {
+    list-style: none;
+    display: flex;
+}
+
+/* Estilo de los enlaces */
+.navLink {
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #313030;
+}
+
+/* Efecto hover en los enlaces */
+.navLink:hover {
+    font-weight: bold;
+}
+
+/* Responsive: mostrar el botón "hamburguesa" en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menuContainer {
+        display: block;
+    }
+
+    .navbarCollapse {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbarCollapse.show {
+        display: flex;
+    }
+
+    .navbarNav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navItem {
+        margin: 0;
+        text-align: center;
+    }
+
+    .navLink {
+        padding: 10px 0;
+    }
+}
