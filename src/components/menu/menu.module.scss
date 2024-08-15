@@ -1,104 +1,120 @@
-/* Resetear márgenes y padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.menuContainer {
+    padding: 10px 20px;
+    border-bottom: 1px solid black;
 }
-
-/* Contenedor para alinear elementos */
-.menuContainer{
+  
+  
+.navbarLogoContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-/* Estilo de la marca (logo) */
-.navbarLogoContainer{
-    display: flex;
-    justify-content: center;
-}
-
-.image{
+.image {
     width: 40%;
 }
 
-/* Estilo del botón "hamburguesa" */
+
+.navBarOptionsContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
 .navbarToggler {
     background-color: transparent;
     border: none;
-    color: white;
-    font-size: 1.5rem;
+    display: none; 
     cursor: pointer;
-    display: none; /* Se mostrará en pantallas pequeñas */
+    color: #313030;
+    visibility: hidden;
 }
 
-/* Estilo del colapso del navbar */
+
 .navbarCollapse {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    transition: max-height 0.3s ease-out; 
+    overflow: hidden;
+    max-height: 0; 
 }
 
-.navBarOptionsContainer{
+.navbarCollapse.show {
+    max-height: 500px;   
+}
+
+.navbarContainer {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-/* Estilo de la lista de navegación */
-.navbarContainer{
+.navbarContainerUser {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbarContainerUser{
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .navbarNav {
     list-style: none;
     display: flex;
+    gap: 15px;
+    flex-direction: row; 
 }
 
-/* Estilo de los enlaces */
+
 .navLink {
     text-decoration: none;
     padding: 8px 12px;
     color: #313030;
+    font-size: 16px;
 }
 
-/* Efecto hover en los enlaces */
+
 .navLink:hover {
     font-weight: bold;
 }
+  
 
-/* Responsive: mostrar el botón "hamburguesa" en pantallas pequeñas */
-@media (max-width: 768px) {
-    .menuContainer {
-        display: block;
+  @media (max-width: 900px) { 
+
+    .menuContainer{
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: flex-start; /* Alinea las opciones al inicio */
     }
 
+    .navbarToggler {
+      display: block;
+      visibility: visible;
+    }
+  
     .navbarCollapse {
-        display: none;
-        flex-direction: column;
-        width: 100%;
+      flex-direction: column; /* Cambia la dirección a columna */
+      align-items: flex-start; /* Alinea las opciones al inicio */
     }
-
-    .navbarCollapse.show {
-        display: flex;
-    }
-
+  
     .navbarNav {
-        flex-direction: column;
-        width: 100%;
+      flex-direction: column;
+      width: 100%;
+      text-align: left;
     }
-
-    .navItem {
-        margin: 0;
-        text-align: center;
+  
+    .navbarContainer,
+    .navbarContainerUser {
+      justify-content: flex-start;
+      width: 100%;
     }
-
+  
     .navLink {
-        padding: 10px 0;
+      padding: 10px 0;
+      width: 100%;
     }
-}
+  
+    .navItem {
+      width: 100%;
+    }
+  }
+  
