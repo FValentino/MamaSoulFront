@@ -14,12 +14,14 @@ const settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay:true, 
+    autoplayInterval:3000
   };
   
 export default function Banner() {
     return (
         <div>
-            <Slider {...settings}>
+            <Slider {...settings} >
                 <div>
                     <Grid xs={12} container className={styles.container}>
                         <Grid item xs={12} sm={6} md={4} className={styles.imageContainer}>
