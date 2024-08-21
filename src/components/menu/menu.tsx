@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useMediaQuery } from "react-responsive";
 
 import styles from "./menu.module.scss";
 import logo from "@assets/image/logoNegro.png";
 
 export default function Menu () {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
+  const isBigScreen = useMediaQuery({query: '(min-width: 900px)' });
+
+  useEffect(()=>{
+    if (isBigScreen){
+      setIsNavOpen(true);
+      console.log("entro al useEffect")
+    }
+  },[isBigScreen]);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);

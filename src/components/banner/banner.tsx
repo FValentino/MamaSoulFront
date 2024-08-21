@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import { Grid, IconButton } from '@mui/material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Grid} from '@mui/material';
 
 import styles from './banner.module.scss'
 
