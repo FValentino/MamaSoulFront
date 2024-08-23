@@ -15,7 +15,7 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay:true, 
-    autoplayInterval:3000
+    autoplayInterval:7000
   };
   
 export default function Banner() {

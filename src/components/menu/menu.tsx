@@ -13,7 +13,6 @@ export default function Menu () {
   useEffect(()=>{
     if (isBigScreen){
       setIsNavOpen(true);
-      console.log("entro al useEffect")
     }
   },[isBigScreen]);
 
