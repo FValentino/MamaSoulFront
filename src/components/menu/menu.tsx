@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Grid, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import { useMediaQuery } from "react-responsive";
 
 import styles from "./menu.module.scss";
@@ -8,6 +10,7 @@ import logo from "@assets/image/logoNegro.png";
 
 export default function Menu () {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const isBigScreen = useMediaQuery({query: '(min-width: 900px)' });
 
   useEffect(()=>{
@@ -19,6 +22,10 @@ export default function Menu () {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  const showMenu = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
 
   return (
     <Grid container className={styles.menuContainer} alignItems="center">
@@ -35,7 +42,20 @@ export default function Menu () {
               <ul className={styles.navbarNav}>
                 <li className={styles.navItem}><a href="#" className={styles.navLink}>Inicio</a></li>
                 <li className={styles.navItem}><a href="#" className={styles.navLink}>Nosotros</a></li>
-                <li className={styles.navItem}><a href="#" className={styles.navLink}>Categoría</a></li>
+                <li className={styles.navItem}>
+                  <button onClick={showMenu} className={styles.navLinkCategory}>
+                    Categorías
+                    <IconButton>
+                      <ArrowDropDownSharpIcon className={styles.navIcon}/>
+                    </IconButton>
+                  </button>
+                  <ul id="dropdownMenu" className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuShow : ""}`}>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                  </ul>
+                </li>
                 <li className={styles.navItem}><a href="#" className={styles.navLink}>Contacto</a></li>
               </ul>
             </Grid>
