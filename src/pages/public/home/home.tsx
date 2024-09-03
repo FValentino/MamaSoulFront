@@ -2,7 +2,7 @@ import React from "react";
 
 import Menu from "@components/menu/menu";
 import Banner from "@components/banner/banner";
-import BestSellers from "@components/bestSellers/bestSellers";
+import Products from "@components/products/products";
 
 export default function Home(){
     return (
@@ -11,7 +11,7 @@ export default function Home(){
 
             <Banner/>
 
-            <BestSellers/>
+            <Products/>
         </div>
     );
 }

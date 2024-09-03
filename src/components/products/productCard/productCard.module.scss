@@ -1,0 +1,69 @@
+.container{
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer{
+    margin-top: 10px;
+    width: 90%;
+    padding-top: 75%;
+    position: relative;
+}
+
+.image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.title, .price {
+    width: 90%;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.title{
+    width: 90%;
+    margin-top: 10px;
+    font-size: large;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.price{
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.buttonContainer{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-around;
+}
+
+.button{
+    width: 40%;
+    border-radius: 10px;
+    font-size: medium;
+    background-color: transparent;
+    box-shadow: 5px 5px 8px #888888;
+    transition: box-shadow 0.4s;
+}
+
+.button:hover{
+    box-shadow:none;
+}
