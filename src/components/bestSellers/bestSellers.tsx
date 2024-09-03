@@ -41,7 +41,7 @@ export default function BestSellers(){
         ]
     };
     return (
-        <div className={styles.container} >
+        <section className={styles.container} >
             <Slider {...settings}>
                 <Grid item xs={3}>
                     <div className={styles.gridItem}>
@@ -64,6 +64,6 @@ export default function BestSellers(){
                     </div>
                 </Grid>
             </Slider>
-        </div>
+        </section>
     );
 }

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Grid, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import { useMediaQuery } from "react-responsive";
+
+import { getCategories, Category } from "@utils/category";
 
 import styles from "./menu.module.scss";
 import logo from "@assets/image/logoNegro.png";
 
 export default function Menu () {
+  const [categories, setCategories] = useState<Category[]>([])
+  const [error, setError] = useState<string | null> (null);
+  
+
   const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const isBigScreen = useMediaQuery({query: '(min-width: 900px)' });
@@ -19,12 +24,36 @@ export default function Menu () {
     }
   },[isBigScreen]);
 
+  //Obtener categorias
+  useEffect(()=>{
+    const fetchCategories = async () =>{
+      try {
+        const data = await getCategories();
+        setCategories(data)
+      } catch(error){
+        setError('Failed to fetch categories')
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   const showMenu = () => {
     setIsDropdownOpen(!isDropdownOpen)
+  }
+
+  function showCategories(){
+    const categoryList = categories.map( (category) => {
+      return (
+        <li className={styles.dropdownItem}> {category} </li>
+      );
+    });
+
+    return (categoryList)
   }
 
   return (
@@ -50,10 +79,7 @@ export default function Menu () {
                     </IconButton>
                   </button>
                   <ul id="dropdownMenu" className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuShow : ""}`}>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
+                    {showCategories()}
                   </ul>
                 </li>
                 <li className={styles.navItem}><a href="#" className={styles.navLink}>Contacto</a></li>

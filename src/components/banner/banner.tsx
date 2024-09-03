@@ -20,7 +20,7 @@ const settings = {
   
 export default function Banner() {
     return (
-        <div>
+        <section>
             <Slider {...settings} >
                 <div>
                     <Grid xs={12} container className={styles.container}>
@@ -37,6 +37,6 @@ export default function Banner() {
                     </Grid>
                 </div>
             </Slider>
-        </div>
+        </section>
     );
   }
