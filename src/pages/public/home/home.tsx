@@ -11,8 +11,6 @@ export default function Home(){
             <Menu/>
 
             <Banner/>
-
-            <SingleProduct/>
         </>
     );
 }
