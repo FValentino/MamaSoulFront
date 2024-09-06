@@ -22,3 +22,13 @@ export const getAllProducts = async ():Promise <Product[]> =>{
         throw (error);
     }
 };
+
+export const getProduct = async ():Promise <Product> =>{
+    try{
+        const response: AxiosResponse<Product> = await apiFakeStore.get(`/products/1`)
+        return response.data;
+    } catch (error){
+        console.error('Error al obtener el producto ', error);
+        throw (error);
+    }
+}

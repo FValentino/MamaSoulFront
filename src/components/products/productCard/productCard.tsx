@@ -11,7 +11,7 @@ interface ProductCardProps{
 
 export default function ProductCard(props : ProductCardProps){
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
             <div className={styles.imageContainer}>
                 <img src={props.image} alt={props.title} className={styles.image}/>
             </div>
@@ -32,6 +32,6 @@ export default function ProductCard(props : ProductCardProps){
                     ver producto
                 </button>
             </div>
-        </div>
+        </section>
     );
 }
