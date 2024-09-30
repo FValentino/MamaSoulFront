@@ -8,6 +8,7 @@ import { getCategories, Category } from "@utils/category";
 
 import styles from "./menu.module.scss";
 import logo from "@assets/image/logoNegro.png";
+import { Link } from "react-router-dom";
 
 export default function Menu () {
   const [categories, setCategories] = useState<Category[]>([])
@@ -70,7 +71,7 @@ export default function Menu () {
             <Grid item xs={12} md={8} className={styles.navbarContainer}>
               <ul className={styles.navbarNav}>
                 <li className={styles.navItem}><a href="#" className={styles.navLink}>Inicio</a></li>
-                <li className={styles.navItem}><a href="#" className={styles.navLink}>Nosotros</a></li>
+                <li className={styles.navItem}> <Link to='/productos'>Todos los productos</Link> </li>
                 <li className={styles.navItem}>
                   <button onClick={showMenu} className={styles.navLinkCategory}>
                     Categorías

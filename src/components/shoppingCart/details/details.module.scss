@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.payment{
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+}
+
+.shopping{
+    width: 50%;
+    padding: 2% 4%;
+    text-decoration: none;
+    color:black;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px solid black;
+}

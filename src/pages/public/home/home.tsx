@@ -2,15 +2,15 @@ import React from "react";
 
 import Menu from "@components/menu/menu";
 import Banner from "@components/banner/banner";
-import Products from "@components/products/products";
-import SingleProduct from "@components/products/product/product";
+
+import ProductList from "@components/shoppingCart/productsList/productList";
+
+import ShoppingCart from "@components/shoppingCart/shoppingCart";
 
 export default function Home(){
     return (
         <>
-            <Menu/>
-
-            <Banner/>
+            <ShoppingCart/>
         </>
     );
 }

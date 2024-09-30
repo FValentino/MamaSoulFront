@@ -1,0 +1,42 @@
+
+.products{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.productDetail{
+    display: flex;
+}
+
+.productImageContainer{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.productImage{
+    width: 30%;
+}
+
+.detail{
+    width: 50%;
+    text-wrap:balance
+}
+
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantityInput{
+    width: 20%;
+    text-align: center;
+}
+
+.price, .total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
